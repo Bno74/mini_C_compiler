@@ -43,20 +43,33 @@ make
 Compile a Source File
 Run the compiler on a MiniC source file (e.g., sample.min) to generate:
 
-Assembly code: output.s
-Three-address code: output.tac
-
+Assembly code:
+```bash
+output.s
+```
+Three-address code: 
+```bash
+output.tac
+```
+```bash
 ./minic sample.min
+```
 
 # View Generated Assembly
 Inspect the first 200 lines of the generated assembly code (output.s).
+```bash
 ls -l output.s
+```
+```bash
 sed -n '1,200p' output.s
+```
 
 # Run the Executable
 Assemble the generated assembly code into an executable and run it.
+```bash
 gcc output.s -o output_exec
 ./output_exec
+```
 
 # View Three-Address Code
 Display the generated TAC (output.tac) for debugging or analysis.
@@ -64,7 +77,9 @@ cat output.tac
 
 # Clean Build Artifacts
 Remove generated files (e.g., minic, output.s, output.tac) to clean the project directory.
+```bash
 make clean
+```
 
 # Usage Example
 
@@ -74,9 +89,11 @@ c = b + 4;
 print c;
 
 
-Build and run:make
+Build and run:
+```bash
+make
 ./minic sample.min
 cat output.tac
 gcc output
-
+```
 
